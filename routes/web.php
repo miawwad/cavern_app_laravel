@@ -26,6 +26,11 @@ Route::get('logout', function () {
 
 Route::middleware('force_login')->group(function () {
     Route::get('/', function () {
-        return view('welcome');
+        return view('index');
+    });
+    
+    Route::get('/order', function(){
+        return view('order');
     });
 });
+
