@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CavernController; 
+use App\Http\Controllers\OrderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,12 +27,8 @@ Route::get('logout', function () {
 });
 
 Route::middleware('force_login')->group(function () {
-    Route::get('/', function () {
-        return view('index');
-    });
+    Route::get('/', [CavernController::class, 'index']);
     
-    Route::get('/order', function(){
-        return view('order');
-    });
+    Route::get('/order',[OrderController::class, 'order']);
 });
 

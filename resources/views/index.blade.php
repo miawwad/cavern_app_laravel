@@ -23,11 +23,11 @@ The Cavern
 @endsection 
 
 @section('content')
-{{-- <link rel="stylesheet" href="styles.css"> --}}
+<link rel="stylesheet" href="index.css">
 <html lang="en">
 
 <head>
-
+    <
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -75,7 +75,7 @@ The Cavern
                     onclick="window.location = 'https://www.roanoke.edu/inside/a-z_index/dining_services/the_cavern/cavern_menu';">View
                     Menu</button>
                 <button id="btn2" type="button"
-                    onclick="window.location = 'https://blackstone.roanoke.edu/mohammad/cavern_app/cavern/order.html';">Place
+                    onclick="window.location = `{{action([App\Http\Controllers\OrderController::class, 'order'])}}`;">Place
                     Order</button>
             </div>
         </div>

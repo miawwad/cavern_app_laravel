@@ -1,0 +1,38 @@
+.head {
+    background-color: #70132d;
+    color: white;
+    font-weight: 100;
+    text-align: left;
+  }
+  
+  #btn2 {
+    background-color: rgb(99, 99, 243);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 30px;
+    min-width: 120px;
+    float: right;
+  }
+  
+  #btn1 {
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 30px;
+    min-width: 120px;
+    float: right;
+  }
+  
+  img {
+    
+    border: 4px solid silver;
+  }
+  
+  .thead th{
+    height: 2px;
+    line-height: 2px;
+  }
