@@ -89,25 +89,9 @@
                             <label for="eat" class="form-label">Type</label>
                             <select name="entree" id="entree" class="form-select" aria-label="Default">
                                 <option value="none" selected disabled hidden>Select an Option</option>
-                                <option id="sandwich" class="sandwich" value="Spicy Chicken Sandwich">Spicy Chicken
-                                    Sandwich
-                                </option>
-                                <option id="sandwich" class="sandwich" value="Black Bean Burger">Black Bean Burger</option>
-                                <option id="sandwich" class="sandwich" value="Hamburger">Hamburger</option>
-                                <option id="sandwich" class="sandwich" value="Grilled Chicken Sandwich">Grilled Chicken
-                                    Sandwich
-                                </option>
-                                <option id="sandwich" class="sandwich" value="Crispy Chicken Sandwich">Crispy Chiken
-                                    Sandwich
-                                </option>
-
-                                <option id="wrap" class="wrap" value="Crispy Chicken Wrap">Crispy Chicken Wrap
-                                </option>
-                                <option id="wrap" class="wrap" value="Turkey Wrap">Turkey Wrap</option>
-                                <option id="wrap" class="wrap" value="Veggie Wrap">Veggie Wrap</option>
-                                <option id="wrap" class="wrap" value="Grilled Chicken Wrap">Grilled Chicken Wrap
-                                </option>
-                                <option id="wrap" class="wrap" value="Spicy Chicken Wrap">Spicy Chicken Wrap</option>
+                                @foreach($entrees as $key => $entree)
+                                <option class="{{$entree->entree_type}}" value="{{$entree->id}}">{{$entree->entree_name}}</option>
+                                @endforeach
                             </select><br>
                         </div>
                     </div>
@@ -163,38 +147,25 @@
                     <div class="grid-2">
                         <div class="grid-item">
                             <label for="Toppings">Toppings</label><br>
-                            <label for="Lettuce" class="form-check-label">
-                                <input for="Lettuce" type="checkbox" id="Lettuce"
-                                    class="form-check-input">Lettuce<br>
+
+                            @foreach($toppings as $key => $topping)
+                            <label for="{{$topping->topping_name}}" class="form-check-label">
+                            <input for="{{$topping->topping_name}}" type="checkbox" value="{{$topping->id}}">{{$topping->topping_name}}
                             </label><br>
-                            <label for="Tomato" class="form-check-label">
-                                <input for="Tomato" type="checkbox" id="Tomato" class="form-check-input">Tomato<br>
-                            </label><br>
-                            <label for="Red Onion" class="form-check-label">
-                                <input for="Red Onion" type="checkbox" id="Red Onion" class="form-check-input">Red
-                                Onion<br>
-                            </label><br>
-                            <label for="Pickels" class="form-check-label">
-                                <input for="Pickels" type="checkbox" id="Pickels"
-                                    class="form-check-input">Pickels<br>
-                            </label><br>
-                            <label for="Cucumbers" class="form-check-label">
-                                <input for="Cucumbers" type="checkbox" id="Cucumbers"
-                                    class="form-check-input">Cucumbers<br>
-                            </label>
+                            @endforeach
+                            
                         </div>
 
                         <div class="grid-item">
                             <label for="Cheese">Cheese</label><br>
-                            <label for="American" class="form-check-label">
-                                <input name="cheese" Type="radio" id="American" value="American"
-                                    class="form-check-input">American<br>
-
-                            </label><br>
-                            <label for="Provolone" class="form-check-label">
-                                <input name="cheese" Type="radio" id="Provolone" value="Provolone"
-                                    class="form-check-input">Provolone<br>
-                            </label>
+            
+                                    @foreach($cheeses as $key => $cheese)
+                                    <label for="{{$cheese->cheese_name}}" class="form-check-label">
+                                    <input class="{{$cheese->cheese_name}}" value="{{$cheese->id}}" type = "radio">{{$cheese->cheese_name}}
+                                    </label><br>
+                                    @endforeach
+                                        
+                            
                             <br><br>
                             <label for="Fries">Fries</label><br>
                             <label for="Yes" class="form-check-label">

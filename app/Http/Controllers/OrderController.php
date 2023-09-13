@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers; 
 use App\Models\Topping; 
-  
+use App\Models\Cheese;
+use App\Models\Condiment;
+use App\Models\Entree;
 
 use Illuminate\Http\Request; 
 
@@ -33,14 +35,12 @@ class OrderController extends Controller
   } 
 
   public function order(){ 
-    
-    $toppings = Topping::get(); 
 
-    dd($toppings); 
-
-    return view()->make('order');
-    
-    
+    $toppings = Topping::get();
+    $cheeses = Cheese::get();
+    $condiments = Condiment::get(); 
+    $entrees = Entree::get();
+    return view()->make('order', compact('toppings', 'condiments', 'cheeses', 'entrees')); 
     
     } 
 
