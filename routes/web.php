@@ -32,3 +32,4 @@ Route::middleware('force_login')->group(function () {
     Route::get('/order',[OrderController::class, 'order']);
 });
 
+Route::post('/order/store', [OrderController::class, 'storeOrder']); 
