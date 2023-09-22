@@ -13,7 +13,6 @@
 @endsection
 
 @section('content')
-<link rel="stylesheet" href="order.css">
     <head>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -56,13 +55,13 @@
                         <div class="grid-item">
                             <label for="entree"><b>Entree</b></label><br>
                             <div class="form-check">
-                                <input class="form-check-input pick" type="radio" name="choose" id="sandwich" required>
+                                <input class="form-check-input pick" type="radio" name="entree_type" id="sandwich" value="sandwich" required>
                                 <label class="form-check-label" for="sandwich">
                                     Burger/Sandwich
                                 </label>
                             </div><br>
                             <div class="form-check">
-                                <input class="form-check-input pick" type="radio" name="choose" id="wrap" required>
+                                <input class="form-check-input pick" type="radio" name="entree_type" id="wrap" value="wrap" required>
                                 <label class="form-check-label" for="wrap">
                                     Wrap
                                 </label>
@@ -80,7 +79,7 @@
                         <div class="grid-item">
                             <label for="eat" class="form-label">Type</label>
                             <select name="entree" id="entree" class="form-select" aria-label="Default" required>
-                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option value="" selected disabled hidden>Select an Option</option>
                                 @foreach($entrees as $key => $entree)
                                 <option class="{{$entree->entree_type}}" value="{{$entree->id}}">{{$entree->entree_name}}</option>
                                 @endforeach
@@ -93,7 +92,7 @@
                         
                             @foreach($condiments as $key => $condiment)
                             <div>
-                                <input name="{{$condiment->condiments_name}}" type="checkbox" id="{{$condiment->condiments_name}}" class="form-check-input">
+                                <input name="condiments[]" type="checkbox" id="{{$condiment->condiments_name}}" value="{{$condiment->id}}" class="form-check-input">
                                 <label for="{{$condiment->condiments_name}}" class="form-check-label">{{$condiment->condiments_name}}</label><br>
                             </div>
                             @endforeach
@@ -108,7 +107,7 @@
 
                             @foreach($toppings as $key => $topping)
                             <label for="{{$topping->topping_name}}" class="form-check-label">
-                            <input for="{{$topping->topping_name}}" type="checkbox" value="{{$topping->id}}">{{$topping->topping_name}}
+                            <input name="toppings[]" class="form-check-input" id="{{$topping->topping_name}}" type="checkbox" value="{{$topping->id}}">{{$topping->topping_name}}
                             </label><br>
                             @endforeach
                             
@@ -119,7 +118,7 @@
             
                                     @foreach($cheeses as $key => $cheese)
                                     <label for="{{$cheese->cheese_name}}" class="form-check-label">
-                                    <input class="{{$cheese->cheese_name}}" value="{{$cheese->id}}" type = "radio" required>{{$cheese->cheese_name}}
+                                    <input name="cheese" class="form-check-input" value="{{$cheese->id}}" id="{{$cheese->cheese_name}}" type = "radio" required>{{$cheese->cheese_name}}
                                     </label><br>
                                     @endforeach
                                         
