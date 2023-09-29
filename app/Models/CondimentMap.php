@@ -16,8 +16,10 @@ class CondimentMap extends Model
 
   
 
-  protected $table= "miawwad_training.dbo.Entree"; 
+  protected $table= "miawwad_training.dbo.condiments_map_MA"; 
 
   protected $primaryKey= "id"; 
-
+  public function condiment(){
+    return $this->hasOne(Topping::class,'id','fkey_condiments');
+  }
 } 

@@ -16,8 +16,11 @@ class ToppingMap extends Model
 
   
 
-  protected $table= "miawwad_training.dbo.Entree"; 
+  protected $table= "miawwad_training.dbo.toppings_map_MA"; 
 
   protected $primaryKey= "id"; 
 
+  public function topping(){
+    return $this->hasOne(Topping::class,'id','fkey_topping');
+  }
 } 

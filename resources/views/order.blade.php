@@ -126,10 +126,10 @@
                             <br><br>
                             <label for="Fries">Fries</label><br>
                             <label for="Yes" class="form-check-label">
-                                <input name="yesno" Type="radio" id="Yes" class="form-check-input" required>Yes
+                                <input name="fries" Type="radio" id="Yes" class="form-check-input" required>Yes
                             </label><br>
                             <label for="No" class="form-check-label">
-                                <input name="yesno" Type="radio" id="No" class="form-check-input" required>No
+                                <input name="fries" Type="radio" id="No" class="form-check-input" required>No
                             </label>
                         </div>
                     </div>
