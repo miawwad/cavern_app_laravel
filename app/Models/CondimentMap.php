@@ -20,6 +20,6 @@ class CondimentMap extends Model
 
   protected $primaryKey= "id"; 
   public function condiment(){
-    return $this->hasOne(Topping::class,'id','fkey_condiments');
+    return $this->hasOne(Condiment::class,'id','fkey_condiments');
   }
 } 

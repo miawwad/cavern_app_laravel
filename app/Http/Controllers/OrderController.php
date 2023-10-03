@@ -111,8 +111,9 @@ class OrderController extends Controller
     public function thankYou($id)
     {
       $order = Order::with(['entree', 'cheese', 'topping_maps.topping', 'condiment_maps.condiment'])->find($id);
+      $condiment = Condiment::with(['condiment_maps.condiment'])->find($id);
   
-      return view()->make('thankyou', compact('order'));
+      return view()->make('thankyou', compact('order', 'condiment'));
     }
 
 } 

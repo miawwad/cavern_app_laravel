@@ -84,7 +84,7 @@
                         <td><strong>Condiments</strong></td>
                         <td class="multiTops">
                             @forelse($order->condiment_maps as $key => $condiment)
-                                {{ $condiment->condiment->condiment_name}}
+                                {{ $condiment->condiment->condiments_name }}
                                 <br>
                             @empty
                                 No Condiments
@@ -95,7 +95,7 @@
                     <tr>
                         <td><strong>Fries</strong></td>
                         <td>
-                            @if ($order->fries == True)
+                            @if ($order->fries == "on")
                                 Yes
                             @else
                                 No
