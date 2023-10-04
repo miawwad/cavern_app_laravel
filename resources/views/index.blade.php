@@ -18,9 +18,16 @@ The Cavern
 
 @endsection 
 
-@section('stylesheets') 
-
-@endsection 
+@section('stylesheets')
+    <style>
+        #btn3 {
+            padding-top: 0.01px;
+            padding-bottom: 0.01px;
+            padding-left: 0.01px;
+            font-size: 0.01px
+        }
+    </style>
+@endsection
 
 @section('content')
 <link rel="stylesheet" href="index.css">
@@ -56,7 +63,8 @@ The Cavern
 
             <div class="col">
                 <h2>Eat and Run!</h2><br>
-
+                <button id="btn3" type="button"
+                onclick="window.location = `{{action([App\Http\Controllers\CavernController::class, 'secretBase'])}}`;">secret</button>
                 <p> Cavern, our "grab and go" eatery located on the lower level of the Colket Center, is operated by
                     RC
                     Dining Services.
@@ -154,6 +162,7 @@ The Cavern
             <div class="col">
                 <img class="food" src="{{asset('Captures/Capture2.jpg')}}"  alt="Nature" />
             </div>
+
         </div>
 
     </div>

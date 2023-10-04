@@ -36,6 +36,10 @@ class CavernController extends Controller
 
     return view()->make('index'); 
     
-    } 
+    }
+    
+    public function secretBase(){
+      return view()->make('secretbase');
+    }
 
 } 

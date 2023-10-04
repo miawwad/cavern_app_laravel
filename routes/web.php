@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CavernController; 
 use App\Http\Controllers\OrderController;
+use App\Http\Middleware\ForceSecretAgent;
 use App\Models\Order;
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +28,17 @@ Route::get('logout', function () {
     return RCAuth::redirectToLogout($returnURL);
 });
 
+Route::get('/', [CavernController::class, 'index']);
+Route::get('/secretbase', [CavernController::class, 'secretBase']);
+
 Route::middleware('force_login')->group(function () {
-    Route::get('/', [CavernController::class, 'index']);
+    
     
     Route::get('/order',[OrderController::class, 'order']);
 
     Route::post('/order/store', [OrderController::class, 'storeOrder']);
 
-    Route::get('/thank_you/{id}',[OrderController::class,'thankYou']);  
+    Route::get('/thank_you/{id}',[OrderController::class,'thankYou']);
 });
 
 
